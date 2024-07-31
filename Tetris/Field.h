@@ -5,7 +5,7 @@
 #include <time.h>
 
 #define SIZE 8
-#define HEIGHT 10
+#define HEIGHT 16
 
 class Field {
 public:
@@ -22,15 +22,26 @@ public:
     void cover();
     void drawing();
     void scored();
-    void move();
 
-    Field() {
-        srand(time(0));
-        for (int i = 0; i < HEIGHT; i++)
-            line[i] = rand();
+    bool check(int x, int y) {
+        return line[y].cell & (1 << x);
     }
 
-    Line point = 1;
+    void input(int x, int y) {
+        if (!check(x, y))
+            line[y].cell += 1 << x;
+    }
+
+    void output(int x, int y) {
+        if (check(x, y))
+            line[y].cell -= 1 << x;
+    }
+
+    Field() {
+        for (int i = 0; i < HEIGHT; i++)
+            line[i] = 0;
+    }
+
     Line line[HEIGHT];
 };
 

@@ -21,7 +21,6 @@ void Field::cover() {
 
 void Field::drawing() {
     system("cls");
-    point.input();
     cover();
     for (int i = 0; i < HEIGHT; i++)
         line[i].input();
@@ -29,19 +28,21 @@ void Field::drawing() {
 }
 
 void Field::scored() {
+   
     for (int i = 0; i < HEIGHT; i++)
         if (line[i].cell == 255)
             line[i].cell = 0;
 
-    for (int i = HEIGHT; i > 0; i--)
-        if ((line[i].cell == 0) && (line[i - 1].cell != 0)) {
-            line[i].cell = line[i - 1].cell;
-            line[i - 1].cell = 0;
-        }
+    for (int j = 0; j < 4; j++)
+        for (int i = HEIGHT; i > 0; i--)
+            if ((line[i].cell == 0) && (line[i - 1].cell != 0)) {
+                line[i].cell = line[i - 1].cell;
+                line[i - 1].cell = 0;
+            }
 
     drawing();
 }
-
+/*
 void Field::move() {
     int num = _getch();
     if (('0' < num) && (num < '9'))
@@ -63,3 +64,4 @@ void Field::move() {
 
     drawing();
 }
+*/
