@@ -1,3 +1,5 @@
+// Отрисовка игрового поля
+
 #include "Field.h"
 #include "Figure.h"
 

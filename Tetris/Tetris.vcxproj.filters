@@ -16,14 +16,14 @@
     <Filter Include="Исходные файлы\Figure">
       <UniqueIdentifier>{807b2781-6539-4354-b233-487a6fd87b8a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Исходные файлы\Field">
+      <UniqueIdentifier>{4e180704-aac6-4a7a-8817-97fe91ad7d9a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Header">
+      <UniqueIdentifier>{b5a4daa3-573b-4808-9792-591c46855a8b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Main.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Field.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
     <ClCompile Include="Figure.cpp">
       <Filter>Исходные файлы\Figure</Filter>
     </ClCompile>
@@ -36,11 +36,26 @@
     <ClCompile Include="Other.cpp">
       <Filter>Исходные файлы\Figure</Filter>
     </ClCompile>
-    <ClCompile Include="Keys.cpp">
-      <Filter>Исходные файлы</Filter>
+    <ClCompile Include="Assess.cpp">
+      <Filter>Исходные файлы\Field</Filter>
+    </ClCompile>
+    <ClCompile Include="Output.cpp">
+      <Filter>Исходные файлы\Field</Filter>
     </ClCompile>
     <ClCompile Include="Drawing.cpp">
-      <Filter>Исходные файлы</Filter>
+      <Filter>Исходные файлы\Header</Filter>
+    </ClCompile>
+    <ClCompile Include="Keys.cpp">
+      <Filter>Исходные файлы\Header</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>Исходные файлы\Header</Filter>
+    </ClCompile>
+    <ClCompile Include="Scored.cpp">
+      <Filter>Исходные файлы\Field</Filter>
+    </ClCompile>
+    <ClCompile Include="Field.cpp">
+      <Filter>Исходные файлы\Field</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

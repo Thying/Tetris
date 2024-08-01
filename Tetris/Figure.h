@@ -4,38 +4,35 @@
 #include <time.h>
 #include "Field.h"
 
-
-struct Block{
+// Структура для представления блока фигуры
+struct Block {
 	unsigned x;
 	unsigned y;
 };
 
+// Класс, представляющий фигуру в игре
 class Figure {
 public:
+	// Массив блоков, составляющих фигуру
 	Block blocks[4];
 
-// (Figure):
+	// Конструктор фигуры
 	Figure();
 
-// Повороты		
-// (Turn):
-	void turnR();	// Направо 
-	void turnL();	// Налево
+	// Методы поворота фигуры
+	// (Turn):
+	void turnR();	// Поворот направо
+	void turnL();	// Поворот налево
 
-// Перемешения	
-// (Move):
-	void moveR();	// Направо
-	void moveL();	// Налево
-	void fall();	// Вниз	
-	void up();		// Верх
+	// Методы перемещения фигуры
+	// (Move):
+	void moveR();	// Перемещение вправо
+	void moveL();	// Перемещение влево
+	void fall();	// Падение вниз
+	void up();		// Перемещение вверх
 
-// Другие функции
-// (Other):
-
-	// Проверка находятся на разрешоной територии
-	bool check(Field field);
-
-	// Размешение в блоки информации
-	void block(int mas, int X, int Y);
+	// Методы для проверки и размещения фигуры
+	// (Other):
+	bool check(Field field);			// Проверка, находится ли фигура в допустимой области
+	void block(int mas, int X, int Y);	// Размещение информации о блоке в массиве
 };
-

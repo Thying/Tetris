@@ -4,45 +4,39 @@
 #include <conio.h>
 #include <time.h>
 
+// Размеры поля
 #define WIDE 8
 #define HEIGHT 16
 
 class Field {
 public:
+    // Структура для представления линии поля
     struct Line {
-        unsigned cell : WIDE;
+        unsigned cell : WIDE; // Битовая маска для хранения состояния ячеек линии
 
-        Line(){}
+        Line() {}
         Line(int num) {
-            cell = num % (1 << WIDE);
+            cell = num % (1 << WIDE); // Инициализация линии числом
         }
-        void input();
+
+        // Отображение линии на экран
+        void output();
     };
 
-    void cover();
-    void drawing();
-    void scored();
+    // Методы для управления полем
+    // (Output):
+    void cover();       // Закрывает поле крышками
+    void drawing();     // Отрисовывает все поле
+    void scored();     // Удаляет собранные линии
 
-    bool check(int x, int y) {
-        return line[y].cell & (1 << x);
-    }
+    // Методы доступа к массиву
+    // (Assess):
+    bool check(int x, int y);   // Проверяет состояние ячейки по координатам
+    void input(int x, int y);   // Вставляет элемент в массив по координатам
+    void output(int x, int y);  // Удаляет элемент из массива по координатам
 
-    void input(int x, int y) {
-        if (!check(x, y))
-            line[y].cell += 1 << x;
-    }
+    Field(); // Конструктор класса
 
-    void output(int x, int y) {
-        if (check(x, y))
-            line[y].cell -= 1 << x;
-    }
-
-    Field() {
-        for (int i = 0; i < HEIGHT; i++)
-            line[i] = 0;
-    }
-
+    // Массив линий, представляющий поле
     Line line[HEIGHT];
 };
-
-

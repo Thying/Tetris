@@ -1,27 +1,24 @@
-#include "Field.h"
-#include <iostream>
-#include "Figure.h"
-
-using namespace std;
-
-void drawing(Field field, Figure figure);
-
-bool keys(Field &field, Figure &figure);
-
-
+#include "Header.h"
 
 void main() {
 	Field field;
-	int x, y;
 	field.drawing();
 
 	while (true) {
+		// Создаем фигуру
 		Figure figure;
+
+		// Отрисовка игрового поля
 		drawing(field, figure);
+
+		// Игровой цикл
 		while (true) {
+			// Обработки клавиш
 			if (keys(field, figure)) break;
+			// Отрисовка игрового поля
 			drawing(field, figure);
 		}
+		// Удаления полных строк
 		field.scored();
 	}
 }
