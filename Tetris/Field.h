@@ -4,17 +4,17 @@
 #include <conio.h>
 #include <time.h>
 
-#define SIZE 8
+#define WIDE 8
 #define HEIGHT 16
 
 class Field {
 public:
     struct Line {
-        unsigned cell : SIZE;
+        unsigned cell : WIDE;
 
         Line(){}
         Line(int num) {
-            cell = num % (1 << SIZE);
+            cell = num % (1 << WIDE);
         }
         void input();
     };
