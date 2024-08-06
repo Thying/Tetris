@@ -39,7 +39,11 @@ public:
 
     Field(); // Конструктор класса
 
+    // Выбор языка
+    bool RusOrEng();
+
     // Массив линий, представляющий поле
     Line line[HEIGHT];
     unsigned point = 0;
+    bool Lang;
 };

@@ -1,12 +1,26 @@
-#include "Field.h"
-#include <iostream>
-#include "Figure.h"
+#include "Header.h"
 
 // Обработки клавиш
 bool keys(Field& field, Figure& figure) {
     switch (_getch()) {
+        // Пауза
+    case 'w':
+    case 72:
+        system("cls");
+        if (field.Lang) {
+            cout << "Пауза" << endl;
+        }
+        else {
+            cout << "Pause" << endl;
+        }
+        cout << endl;
+
+        Instructions(field.Lang);
+
+        break;
         // Лево
     case 'a':
+    case 75:
         figure.moveL(); // Перемещаем фигуру влево
         if (figure.check(field)) { // Проверяем, не столкнулась ли фигура с препятствиями
             figure.moveR(); // Если столкнулась, возвращаем на место
@@ -15,6 +29,7 @@ bool keys(Field& field, Figure& figure) {
 
         // Право
     case 'd':
+    case 77:
         figure.moveR();
         if (figure.check(field)) {
             figure.moveL();
@@ -23,6 +38,7 @@ bool keys(Field& field, Figure& figure) {
 
         // Вниз
     case 's':
+    case 80:
         figure.fall(); // Опускаем фигуру вниз
         if (figure.check(field)) { // Проверяем, не столкнулась ли фигура с препятствиями
             figure.up(); // Если столкнулась, возвращаем на место

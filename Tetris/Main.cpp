@@ -10,13 +10,15 @@ void main() {
     Field field;
     Figure figure;
 
+    system("cls");
+    Instructions(field.Lang);
+
     auto lastKeyPressTime = std::chrono::steady_clock::now();
-    // Начальная скорость падения
-    unsigned fallSpeed = 0;
 
     while (true) {
         // Создаем новую фигуру
         figure.recreate();
+        if (figure.check(field)) break;
 
         // Отрисовка игрового поля
         drawing(field, figure);
@@ -31,7 +33,7 @@ void main() {
             }
             else {
                 // Проверяем, прошло ли время для падения
-                if (std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::steady_clock::now() - lastKeyPressTime).count() >= (1000 - fallSpeed)) {
+                if (std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::steady_clock::now() - lastKeyPressTime).count() >= (1000 - field.point)) {
                     lastKeyPressTime = std::chrono::steady_clock::now(); // Обновляем время последнего нажатия
                     if (fall(field, figure)) break; // Вызываем f(), если фигура упала
                 }
@@ -41,8 +43,7 @@ void main() {
         }
         // Удаления полных строк
         field.scored();
-
-        // Увеличиваем скорость падения
-        fallSpeed++;
     }
+
+    EndGame(field.point, field.Lang);
 }

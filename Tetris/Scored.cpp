@@ -25,6 +25,12 @@ void Field::scored() {
                 line[i - 1].cell = 0;
             }
 
-    if(indicator)
+    if (indicator) {
+        for (int i = 1; i < HEIGHT; i++)
+            if ((line[i].cell == 0) && (line[i - 1].cell != 0)) {
+                line[i].cell = line[i - 1].cell;
+                line[i - 1].cell = 0;
+            }
         point += indicator * 2 - 1;
+    }
 }

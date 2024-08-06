@@ -27,7 +27,10 @@ void Field::cover() {
 void Field::drawing() {
     system("cls");
 
-    cout << "Point: " << point << endl;
+    if(Lang)
+        cout << "Очки: " << point << endl;
+    else
+        cout << "Point: " << point << endl;
 
     cover();
     for (int i = 0; i < HEIGHT; i++)

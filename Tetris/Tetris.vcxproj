@@ -129,14 +129,17 @@
   <ItemGroup>
     <ClCompile Include="Assess.cpp" />
     <ClCompile Include="Drawing.cpp" />
+    <ClCompile Include="EndGame.cpp" />
     <ClCompile Include="Fall.cpp" />
     <ClCompile Include="Field.cpp" />
     <ClCompile Include="Figure.cpp" />
+    <ClCompile Include="Instructions.cpp" />
     <ClCompile Include="Output.cpp" />
     <ClCompile Include="Keys.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Move.cpp" />
     <ClCompile Include="Other.cpp" />
+    <ClCompile Include="RusOrEng.cpp" />
     <ClCompile Include="Scored.cpp" />
     <ClCompile Include="Turn.cpp" />
   </ItemGroup>

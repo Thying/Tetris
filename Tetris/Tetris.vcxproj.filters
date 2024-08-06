@@ -60,6 +60,15 @@
     <ClCompile Include="Fall.cpp">
       <Filter>Исходные файлы\Header</Filter>
     </ClCompile>
+    <ClCompile Include="EndGame.cpp">
+      <Filter>Исходные файлы\Header</Filter>
+    </ClCompile>
+    <ClCompile Include="Instructions.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="RusOrEng.cpp">
+      <Filter>Исходные файлы\Field</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Field.h">
