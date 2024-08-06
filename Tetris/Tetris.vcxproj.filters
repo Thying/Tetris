@@ -57,6 +57,9 @@
     <ClCompile Include="Field.cpp">
       <Filter>Исходные файлы\Field</Filter>
     </ClCompile>
+    <ClCompile Include="Fall.cpp">
+      <Filter>Исходные файлы\Header</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Field.h">

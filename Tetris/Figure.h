@@ -17,7 +17,7 @@ public:
 	Block blocks[4];
 
 	// Конструктор фигуры
-	Figure();
+	void recreate();
 
 	// Методы поворота фигуры
 	// (Turn):

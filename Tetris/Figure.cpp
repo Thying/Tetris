@@ -1,6 +1,6 @@
 #include "Figure.h"
 
-Figure::Figure() {
+void Figure::recreate() {
 	srand(time(0));
 	switch (rand() % 7)
 	{

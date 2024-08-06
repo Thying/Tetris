@@ -27,7 +27,9 @@ public:
     // (Output):
     void cover();       // Закрывает поле крышками
     void drawing();     // Отрисовывает все поле
+
     void scored();     // Удаляет собранные линии
+    int scoredCheck();
 
     // Методы доступа к массиву
     // (Assess):

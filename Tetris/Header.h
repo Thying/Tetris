@@ -10,3 +10,6 @@ void drawing(Field field, Figure figure);
 
 // Обработки клавиш
 bool keys(Field& field, Figure& figure);
+
+// Подение
+bool fall(Field& field, Figure& figure);
