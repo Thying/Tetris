@@ -41,4 +41,5 @@ public:
 
     // Массив линий, представляющий поле
     Line line[HEIGHT];
+    unsigned point = 0;
 };

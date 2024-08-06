@@ -19,13 +19,16 @@ void Field::Line::output() {
 void Field::cover() {
     cout << ' ';
     for (int i = 0; i < WIDE * 2; i++)
-        cout << '_';
+        cout << '#';
     cout << ' ' << endl;
 }
 
 // Прорисовка Все поле
 void Field::drawing() {
     system("cls");
+
+    cout << "Point: " << point << endl;
+
     cover();
     for (int i = 0; i < HEIGHT; i++)
         line[i].output();

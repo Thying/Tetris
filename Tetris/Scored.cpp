@@ -24,4 +24,7 @@ void Field::scored() {
                 line[i].cell = line[i - 1].cell;
                 line[i - 1].cell = 0;
             }
+
+    if(indicator)
+        point += indicator * 2 - 1;
 }
