@@ -15,6 +15,9 @@ void Field::output() {
             case 1:
                 cout << "[]";
                 break;
+            case -1:
+                cout << "##";
+                break;
             case 2:
                 cout << "{}";
                 break;
