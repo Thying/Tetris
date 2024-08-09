@@ -4,17 +4,17 @@
 
 // Проверка что находится
 bool Field::check(int x, int y) {
-    return line[y].cell & (1 << x);
+    return fiald[y][x] > 0;
 }
 
 // Положить в массив
 void Field::input(int x, int y) {
     if (!check(x, y))
-        line[y].cell += 1 << x;
+        fiald[y][x] = 1;
 }
 
 // Убрать из массива
 void Field::output(int x, int y) {
     if (check(x, y))
-        line[y].cell -= 1 << x;
+        fiald[y][x] = 0;
 }

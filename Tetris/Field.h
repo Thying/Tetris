@@ -10,21 +10,9 @@
 
 class Field {
 public:
-    // Структура для представления линии поля
-    struct Line {
-        unsigned cell : WIDE; // Битовая маска для хранения состояния ячеек линии
-
-        Line() {}
-        Line(int num) {
-            cell = num % (1 << WIDE); // Инициализация линии числом
-        }
-
-        // Отображение линии на экран
-        void output();
-    };
-
     // Методы для управления полем
     // (Output):
+    void output();  // Удаляет элемент из массива по координатам
     void cover();       // Закрывает поле крышками
     void drawing();     // Отрисовывает все поле
 
@@ -43,7 +31,7 @@ public:
     bool RusOrEng();
 
     // Массив линий, представляющий поле
-    Line line[HEIGHT];
+    int fiald[HEIGHT][WIDE];
     unsigned point = 0;
     bool Lang;
 };

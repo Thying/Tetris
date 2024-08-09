@@ -5,14 +5,19 @@
 using namespace std;
 
 // Прорисовка Линии
-void Field::Line::output() {
-    cout << '|';
-    for (int i = 0; i < WIDE; i++)
-        if (cell >> i & 1)
-            cout << "[]";
-        else
-            cout << "  ";
-    cout << '|' << endl;
+void Field::output() {
+    for (int i = 0; i < HEIGHT; i++) {
+        cout << '|';
+
+        for (int j = 0; j < WIDE; j++)
+            if (check(j, i))
+                cout << "[]";
+            else
+                cout << "  ";
+
+        cout << '|' << endl;
+
+    }
 }
 
 // Прорисовка Крышки
@@ -33,7 +38,6 @@ void Field::drawing() {
         cout << "Point: " << point << endl;
 
     cover();
-    for (int i = 0; i < HEIGHT; i++)
-        line[i].output();
+    output();
     cover();
 }

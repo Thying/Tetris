@@ -3,7 +3,7 @@
 #include "Figure.h"
 
 // ѕроверка наход€тс€ на разрешоной територии
-bool Figure::check(Field field) {
+bool Figure::check(Field& field) {
 	for (int i = 0; i < 4; i++) {
 		if (blocks[i].x < 0 || blocks[i].x > WIDE - 1)
 			return true;
