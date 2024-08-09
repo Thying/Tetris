@@ -43,7 +43,7 @@ bool keys(Field& field, Figure& figure) {
         if (figure.check(field)) { // ѕровер€ем, не столкнулась ли фигура с преп€тстви€ми
             figure.up(); // ≈сли столкнулась, возвращаем на место
             for (int i = 0; i < 4; i++) { // «аполн€ем €чейки пол€ блоками фигуры
-                field.input(figure.blocks[i].x, figure.blocks[i].y);
+                field.input(figure.blocks[i].x, figure.blocks[i].y, figure.tipy);
             }
             return true; // ¬озвращаем true, если фигура опустилась до конца
         }
@@ -56,7 +56,7 @@ bool keys(Field& field, Figure& figure) {
             if (figure.check(field)) {
                 figure.up(); // ¬ернуть на место, если столкнулась
                 for (int i = 0; i < 4; i++) {
-                    field.input(figure.blocks[i].x, figure.blocks[i].y);
+                    field.input(figure.blocks[i].x, figure.blocks[i].y, figure.tipy);
                 }
                 break; // ¬ыходим из цикла, когда фигура опустилась до конца
             }

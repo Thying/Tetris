@@ -5,7 +5,7 @@ bool fall(Field& field, Figure& figure) {
     if (figure.check(field)) { // Проверяем, не столкнулась ли фигура с препятствиями
         figure.up(); // Если столкнулась, возвращаем на место
         for (int i = 0; i < 4; i++) { // Заполняем ячейки поля блоками фигуры
-            field.input(figure.blocks[i].x, figure.blocks[i].y);
+            field.input(figure.blocks[i].x, figure.blocks[i].y, figure.tipy);
         }
         return true;
     }

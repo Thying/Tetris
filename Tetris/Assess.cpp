@@ -8,9 +8,9 @@ bool Field::check(int x, int y) {
 }
 
 // Положить в массив
-void Field::input(int x, int y) {
+void Field::input(int x, int y, int tipy) {
     if (!check(x, y))
-        fiald[y][x] = 1;
+        fiald[y][x] = tipy;
 }
 
 // Убрать из массива

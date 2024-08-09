@@ -2,6 +2,9 @@
 
 void Figure::recreate() {
 	srand(time(0));
+
+	tipy = rand() % 3 + 1;
+ 
 	switch (rand() % 7)
 	{
 	case 0:

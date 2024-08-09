@@ -15,6 +15,7 @@ class Figure {
 public:
 	// Массив блоков, составляющих фигуру
 	Block blocks[4];
+	int tipy;
 
 	// Конструктор фигуры
 	void recreate();
